@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import ShowCar from "./components/showCar/ShowCar";
+import Header from "./components/header/header";
+import "./App.css";
+import Modal from "./modal";
+import VhDisplay from "./components/vehicleMenu/vhDisplay";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<React.Fragment>
+			<Router>
+				<div className='just' id='main-tag'>
+					<Header />
+					<Route exact path='/'>
+						<Modal />
+						<ShowCar />
+					</Route>
+				</div>
+				<Route path='/components/vehicleMenu/:id' component={VhDisplay} />
+			</Router>
+		</React.Fragment>
+	);
 }
-
 export default App;

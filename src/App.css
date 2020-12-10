@@ -1,38 +1,454 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+* {
+	box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+	height: 100%;
+	font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen-Sans, Ubuntu,
+		Cantarell, "Helvetica Neue", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h5,
+h6 {
+	padding: 0;
+	margin: 0;
+}
+.header {
+	height: 120px;
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+	background-color: #222222;
+}
+.header img {
+	margin-top: 20px;
+	width: 200px;
+	height: 75px;
+}
+.icon {
+	margin: 0 3px 0 0;
+	font-size: 22px;
+	color: #db1943;
+	font-weight: bold;
+}
+.header .contacts a {
+	color: white;
+	font-size: 17px;
+	line-height: 1.6;
+	text-decoration: none;
+	font-weight: 400;
+	margin-right: 5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.hrRule {
+	height: 3px;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-color: #db1943;
+	box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.2);
+}
+.contacts {
+	display: flex;
+	align-items: center;
+	/* flex-wrap: wrap; */
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+	width: 350px;
+	border: none;
+	margin-bottom: 2rem;
+	padding: 1rem;
+	box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.2);
+}
+.card h5 {
+	font-weight: 900;
+}
+img {
+	width: 21.8rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.parent {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.just {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.just h1 {
+	text-align: center;
+	padding: 20px;
+}
+.make {
+	display: flex;
+	flex-wrap: wrap;
+	width: 95%;
+	justify-content: center;
+	margin-bottom: 1.5rem;
+}
+.makeBtn {
+	padding: 10px;
+	margin-right: 1rem;
+	background-color: #fff;
+	border: 1px solid grey;
+}
+.makeBtn:hover {
+	background-color: #db1943;
+	cursor: pointer;
+	color: #fff;
+	border: none;
+	box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.2);
+}
+.makeBtn::after {
+	background-color: #db4c6b;
+	border: none;
+	box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.2);
+}
+.content {
+	display: flex;
+	flex-wrap: wrap;
+}
+/*           BUTTON CSS            */
+.linkComponent {
+	text-decoration: none;
+	outline: none;
+}
+.detailLink {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40%;
+	cursor: pointer;
+	padding: 5px;
+	background: #e23357;
+	border: none;
+	color: white;
+	border-radius: 5px;
+	outline: none !important;
+}
+
+.price_devider {
+	color: #6b6b6b;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px 0 10px 0;
+}
+.price_devider h5 {
+	color: #e23357;
+	margin: 0;
+	font-size: 16px;
+}
+.price_devider h5:last-child {
+	font-weight: bold;
+}
+.car_img img {
+	border-radius: 3px 3px 0 0;
+}
+.price_devider p {
+	margin: 0;
+}
+
+.inventory_header {
+	/* text-align: center; */
+	margin-left: 8%;
+	padding: 10px;
+	width: 100%;
+}
+
+.inventory_header h3,
+h6 {
+	font-weight: 900;
+}
+.partners {
+	display: flex;
+	box-sizing: border-box;
+	padding: 0 2rem;
+	margin-top: 2rem;
+}
+.partners img {
+	width: 7rem;
+}
+.partners button {
+	width: 150px;
+}
+.fa-video {
+	margin: 10px 0 20px 0;
+	color: #e23357;
+	font-size: 14px;
+}
+.fa-exclamation-circle {
+	color: gray;
+	font-size: 0.8rem;
+	padding: 3px;
+}
+.fa-question-circle {
+	color: gray;
+	font-size: 0.8rem;
+	padding: 3px;
+	display: inline-block;
+}
+.tax {
+	text-align: right;
+}
+.top-search {
+	text-align: center;
+}
+.top-search input {
+	padding: 8px;
+	border: none;
+	background-color: rgb(245, 240, 240);
+	border-radius: 10px;
+}
+.modal-background {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	overflow: hidden;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+	border-radius: 5px;
+	width: 50vw;
+	background-color: rgb(245, 245, 245);
+	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
+}
+.close-modal {
+	color: #e23357;
+	position: relative;
+	float: right;
+	font-size: 1.5rem;
+	right: 10px;
+	top: 10px;
+	transition: 0.5s ease all;
+}
+.close-modal:hover {
+	cursor: pointer;
+	transform: rotate(90deg);
+}
+.modal-content span {
+	width: 100%;
+	text-align: center;
+}
+
+.modal-content span p {
+	padding: 10px;
+	line-height: 25px;
+}
+
+.vhCar {
+	background-color: rgba(0, 0, 0, 0.8);
+	width: 100%;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.vhCar button {
+	font-size: 0.9rem;
+	color: white;
+	text-decoration: none;
+	background: transparent;
+	border: none;
+}
+.vhCar button:focus {
+	text-decoration: none;
+	border: none;
+	outline: none;
+}
+
+.vhCar button:hover {
+	cursor: pointer;
+}
+
+@media (min-width: 1500px) {
+	body {
+		font-size: 20px;
+	}
+	.just {
+		width: 100%;
+		/* display: flex; */
+		/* flex-direction: column; */
+		/* justify-content: center;
+		align-items: center; */
+	}
+	.inventory_header {
+		width: 60rem;
+		margin: 0;
+	}
+	.card {
+		display: flex;
+		width: 61rem;
+	}
+
+	.card img {
+		width: 30rem;
+	}
+
+	.qweewq button {
+		width: 5rem;
+	}
+	.info_car {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 0 2rem;
+	}
+	.info_car h4 {
+		margin: 0 0 10px 0;
+	}
+	.info_car h5 {
+		margin: 10px 0;
+	}
+	.info_car h5:nth-child(3) {
+		margin: 10px 0 60px 0;
+	}
+	.info_container {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	.partners {
+		display: flex;
+		justify-content: space-between;
+	}
+	.partners img {
+		width: 7rem;
+	}
+
+	.separator {
+		margin-right: 5rem;
+	}
+	.detailBtn button {
+		width: 20rem;
+		height: 2.5rem;
+		margin-left: 17rem;
+		margin-top: 1rem;
+	}
+}
+@media screen and (max-width: 1400px) {
+	.detailLink {
+		width: 100%;
+	}
+}
+@media screen and (max-width: 1499px) {
+	.card {
+		margin: 1rem auto;
+	}
+	.car_img img {
+		width: 20rem;
+	}
+	.header .contacts a {
+		margin-right: 1rem;
+	}
+	.inventory_header {
+		width: 100vw;
+		margin: 0 35px;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.contacts {
+		display: block;
+		margin-top: 1rem;
+	}
+	.inventory_header {
+		width: 100vw;
+		margin: 0;
+		text-align: center;
+	}
+	.partners {
+		padding: 0;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.card {
+		margin: 1rem auto;
+	}
+	.card img {
+		width: 20rem;
+		margin-bottom: 10px;
+	}
+	.partners img {
+		width: 7rem;
+	}
+	.partners {
+		display: flex;
+		flex-direction: column;
+	}
+	.partners button {
+		width: 100%;
+	}
+	.inventory_header {
+		width: 100vw;
+		margin: 0;
+		text-align: center;
+	}
+	.partners {
+		padding: 0;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.modal-content {
+		width: 80vw;
+	}
+	.card {
+		width: 300px;
+		display: flex;
+		flex-direction: column;
+		margin: 1rem auto;
+	}
+	.inventory_header {
+		width: 100vw;
+		margin: 0;
+		text-align: center;
+	}
+	.car_img img {
+		width: 270px;
+	}
+	.partners button {
+		width: 100%;
+	}
+	.header {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		height: 15rem;
+		width: 100vw;
+	}
+	.contacts {
+		display: flex;
+		flex-direction: column;
+	}
+	.contact {
+		padding: 5px;
+	}
+	.header .contacts a {
+		margin: 0;
+	}
+	.make {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-bottom: 10px;
+		width: 90vw;
+	}
+	.makeBtn {
+		margin-bottom: 15px;
+		padding: 15px;
+	}
+	.partners {
+		padding: 0;
+	}
 }
